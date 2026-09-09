@@ -137,6 +137,16 @@ committed.
   2^16 - 1 period. Clean under `-Wall -Wextra -Werror`, `-O0`, `-O2`,
   ASan, and UBSan. Measured at `-O2`: about 4.9 ns/step.
 
+- `lab/21-binary-gcd`: Stein's binary GCD for 32-bit integers, built
+  from the shift/subtract identities, differential-tested against a
+  naive Euclid reference: 2,048,576 total checks (1,048,576 exhaustive
+  0..1023 pairs plus 1,000,000 fixed-seed random 32-bit pairs), 0
+  mismatches, identical FNV-1a checksum 11576187220487214191 across
+  `-O0`, `-O2`, and ASan+UBSan builds. Clean under
+  `-Wall -Wextra -Werror`. Measured at `-O2`: about 528 ns per
+  fully-checked pair (includes the PRNG step, oracle comparison, and
+  checksum).
+
 ## Building
 
 Each module is self-contained:
