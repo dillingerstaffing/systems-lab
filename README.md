@@ -260,6 +260,17 @@ committed.
   encode and decode over 100M timed values (loop includes the PRNG
   step, so a ceiling).
 
+- `lab/31-mul-by-constant`: `mul_const32(x, k)` for 8-bit `k` built
+  from the distributive law (sum over set bits of `k` of `x << i`),
+  using only shifts and adds: 256,000,000 differential checks
+  against the native product (all 256 constants, 1M fixed-seed
+  random 32-bit values each), 0 mismatches, identical checksum
+  18440810711898140094 across `-O0`, `-O2`, and ASan+UBSan builds.
+  Zero warnings at `-Wall -Wextra -Werror`, no sanitizer reports,
+  and the `-O2` disassembly was inspected to confirm the shift-add
+  loop survived (no `imul`). Measured at `-O2`: 9.09 ns/multiply
+  (110.0 Mops/s).
+
 - `lab/34-branchless-minmax`: branchless `bmin32`/`bmax32` over the full
   `int32_t` domain, the operand selected by the sign bit of the exact
   64-bit difference (a 32-bit `(a - b) >> 31` mask would pick the wrong
