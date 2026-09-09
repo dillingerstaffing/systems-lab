@@ -71,6 +71,15 @@ committed.
   trade-off stated honestly in PROOF.md. Free-all coalesces the 64 KiB
   heap back to one block.
 
+- `lab/14-align-arith`: alignment and power-of-two rounding primitives
+  (`align_up`, `align_down`, `is_pow2`, `round_up_pow2`) built from bit
+  identities, differential-checked against division/loop references:
+  4,200,728 total checks across the four primitives, 0 mismatches. Each
+  run pairs a 6,208-case boundary sweep with 1,048,576 fixed-seed random
+  32-bit values per primitive and 22 explicit edge cases (identity,
+  zero, UINT32_MAX, round-up overflow). Zero warnings at
+  `-Wall -Wextra -Werror` under `-O0`, `-O2`, ASan, and UBSan.
+
 ## Building
 
 Each module is self-contained:
