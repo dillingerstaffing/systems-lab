@@ -260,6 +260,18 @@ committed.
   encode and decode over 100M timed values (loop includes the PRNG
   step, so a ceiling).
 
+- `lab/34-branchless-minmax`: branchless `bmin32`/`bmax32` over the full
+  `int32_t` domain, the operand selected by the sign bit of the exact
+  64-bit difference (a 32-bit `(a - b) >> 31` mask would pick the wrong
+  operand near `INT32_MIN`/`INT32_MAX`; the wide difference needs no
+  signed-overflow assumption). 4,304,967,345 differential checks
+  against the ternary-operator reference (all 2^32 `int16_t` pairs
+  exhaustive, 49 directed `INT32_MIN`/`INT32_MAX` edge pairs, 10M
+  fixed-seed random 32-bit pairs), 0 mismatches under `-O2`, `-O0`,
+  and ASan+UBSan. `-O2` disassembly shows `sub`/`sar`/`xor`/`and`/`xor`
+  with no branch and no `cmov`. Measured at `-O2`: 3.650 ns/pair over
+  200M timed pairs.
+
 ## Building
 
 Each module is self-contained:
