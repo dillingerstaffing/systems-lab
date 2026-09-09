@@ -168,6 +168,16 @@ committed.
   backward overlaps while `my_memmove` stays byte-exact. Measured at
   `-O2`: ~1.2 GiB/s vs libc ~43 GiB/s, the gap honestly documented
   as the cost of the byte-at-a-time design.
+- `lab/45-hamming-dist`: Hamming distance from the XOR identity
+  (`d(a,b) = popcount(a^b)`) with popcount rebuilt from the SWAR
+  parallel-add identities from lab/17, differential-tested against a
+  naive bit-loop reference: 10,000,073 checks (73 directed edge cases
+  plus 10,000,000 fixed-seed random 64-bit pairs), 0 mismatches,
+  identical FNV-1a checksum `b80215e1eb7bac94` across `-O0`, `-O2`,
+  and ASan+UBSan builds. Disassembly confirms no `popcnt`
+  instruction in the binary. Clean under `-Wall -Wextra -Werror`.
+  Measured at `-O2`: 5.69 ns/pair (175.6 Mpairs/s) over 100M timed
+  pairs (loop includes the PRNG step, so a ceiling).
 
 - `lab/45-hamming-dist`: Hamming distance of two 64-bit words as
   `d(a, b) = popcount(a ^ b)`, with the popcount rebuilt from the SWAR
