@@ -374,6 +374,18 @@ committed.
   -Werror`, no sanitizer reports. Measured at `-O2`: 4.424 ns per
   permute/inverse call over 2M calls.
 
+- `lab/46-fletcher16`: Fletcher-16 checksum implemented only from its
+  dual running-sum recurrence (`sum1 = (sum1 + byte) % 255`,
+  `sum2 = (sum2 + sum1) % 255`). Differential-tested against an
+  independent closed-form two-loop weighted-sum reference: 8/8
+  published and hand-checked vectors pass ("abcde" -> 0xC8F0,
+  "abcdef" -> 0x2057, "abcdefgh" -> 0x0627), plus 1,000,000
+  fixed-seed random buffers (1,388,938,179 bytes), 0 mismatches.
+  FNV-1a checksum `0x903aa7957d888495` identical across `-O0`,
+  `-O2`, ASan+UBSan, and UBSan builds; zero warnings under
+  `-std=c11 -Wall -Wextra -Werror`, zero sanitizer reports.
+  Measured at `-O2`: 219.8 MiB/s.
+
 ## Building
 
 Each module is self-contained:
