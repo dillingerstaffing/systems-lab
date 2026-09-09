@@ -169,6 +169,20 @@ committed.
   `-O2`: ~1.2 GiB/s vs libc ~43 GiB/s, the gap honestly documented
   as the cost of the byte-at-a-time design.
 
+- `lab/45-hamming-dist`: Hamming distance of two 64-bit words as
+  `d(a, b) = popcount(a ^ b)`, with the popcount rebuilt from the SWAR
+  parallel-add bit identities (no library popcount wrapped),
+  differential-tested against a naive bit-loop reference: 10,000,073
+  total checks (73 directed edge cases plus 10,000,000 fixed-seed
+  splitmix64 pairs), 0 mismatches, identical FNV-1a checksum
+  b80215e1eb7bac94 across `-O0`, `-O2`, and ASan+UBSan builds.
+  Disassembly confirms the raw SWAR sequence survives compilation
+  with zero `popcnt` instructions in the object. Clean under
+  `-Wall -Wextra -Werror`, no sanitizer reports. Measured at `-O2`:
+  5.69 ns/pair, 175.6 Mpairs/s over 100M timed pairs (timed loop
+  includes two PRNG steps per pair, so this is a ceiling on the raw
+  rate).
+
 ## Building
 
 Each module is self-contained:
