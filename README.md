@@ -233,6 +233,22 @@ committed.
   Measured at `-O2`: ~6.1 ns/value over 100M timed values (loop includes
   the PRNG step, +-1 ns machine variance observed).
 
+- `lab/26-msb-lsb`: `ffs64` (1-based lowest-set-bit index) from the `x & -x`
+  low-bit isolation identity and `fls64` (0-based highest-set-bit index)
+  from the shift/OR smear identity, each mapped through a de Bruijn
+  multiply (`* 0x03f79d71b4cb0a89`, top 6 bits) and a 64-entry table; the
+  constant's hash distinctness is asserted by the test rather than trusted,
+  and no bit-scan builtin appears in the implementation.
+  Differential-tested against `__builtin_ffsll` and
+  `63 - __builtin_clzll`: 131,335 checks (all 65536 16-bit inputs plus 133
+  directed edges: 0, all-ones, 2^k, 2^(k+1)-1), 0 mismatches, identical
+  FNV-1a checksum 7928615795610640929 across `-O0`, `-O2`, and
+  ASan+UBSan builds. Clean under `-Wall -Wextra -Werror`. Disassembly at
+  `-O2` shows the multiply-and-table construction with no `tzcnt`,
+  `lzcnt`, `bsr`, `bsf`, or `popcnt`. Measured at `-O2`: 3.74 ns/value
+  (ffs64) and 4.35 ns/value (fls64) over 100M timed values each (loop
+  includes the PRNG step).
+
 ## Building
 
 Each module is self-contained:
