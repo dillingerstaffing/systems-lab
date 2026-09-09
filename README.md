@@ -193,6 +193,17 @@ committed.
   includes two PRNG steps per pair, so this is a ceiling on the raw
   rate).
 
+- `lab/23-floor-log2`: floor(log2) of a 64-bit word from the shift/OR
+  bit-propagation identity (`x |= x >> 1/2/4/8/16/32`) plus a from-scratch
+  SWAR popcount minus 1, no hardware clz anywhere in the implementation.
+  Differential-tested against `63 - __builtin_clzll`: 10,000,193 checks
+  (193 boundary cases including 2^k, 2^k +/- 1, 2^k - 1, UINT64_MAX, plus
+  10,000,000 fixed-seed splitmix64 values), 0 mismatches, identical
+  FNV-1a checksum 16451078516552681775 across `-O0`, `-O2`, and
+  ASan+UBSan builds. Disassembly confirms the shift/OR sequence survives
+  compilation with no bsr/lzcnt/tzcnt emitted. Measured at `-O2`:
+  7.7-7.9 ns/value over 100M timed values (loop includes the PRNG step).
+
 ## Building
 
 Each module is self-contained:
