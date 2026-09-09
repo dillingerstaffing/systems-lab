@@ -438,6 +438,15 @@ committed.
   identical across `-O0`, `-O2`, ASan+UBSan, and UBSan builds; zero
   warnings, zero sanitizer reports. Measured at `-O2`: 31.6 ns/value
   (200-byte string, stated as a ceiling).
+- `lab/52-bit-interleave`: Morton (Z-order) codes for a 16-bit coordinate
+  pair, `morton_interleave`/`morton_deinterleave` from the bit-spreading
+  shift/mask identities only (no tables, no builtins). Differential-checked
+  against a naive per-bit-loop reference: exhaustive over all 65,536 8-bit
+  pairs plus 10,000,000 fixed-seed splitmix64 random 32-bit values on the
+  round-trip invariant: 20,196,608 checks, 0 mismatches. FNV-1a fingerprint
+  `0x57707ad2ff081ccb` identical across `-O0`, `-O2`, and ASan+UBSan builds;
+  zero warnings, zero sanitizer reports. Measured at `-O2`: 8.705 ns/pair
+  (round-trip loop, stated as a ceiling since it includes the splitmix64 step).
 
 ## Building
 
