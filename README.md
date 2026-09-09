@@ -342,6 +342,30 @@ committed.
   ns/value, rotl 2.65 to 2.66 ns/value (timed loop includes the
   PRNG step, so a ceiling).
 
+- `lab/35-parity-fold`: `parity64` built only from the xor-fold
+  reduction identity (`x ^= x >> 32; 16; 8; 4; 2; 1; return x & 1`,
+  folding preserves the bit-XOR). Differential-tested against a naive
+  per-bit loop: 2,065,536 total checks (65,536 exhaustive 16-bit
+  inputs, 1M fixed-seed random 64-bit values, plus the homomorphism
+  `parity(a^b) == parity(a)^parity(b)` on 1M pairs), 0 mismatches,
+  identical FNV-1a checksum d42f33eaf01cd639 across `-O0`, `-O2`, and
+  ASan+UBSan builds. Clean under `-Wall -Wextra -Werror`, no
+  sanitizer reports. Measured at `-O2`: 4.26 ns/value (234.6
+  Mvalues/s) over 25M timed values.
+
+- `lab/43-byte-permute`: `permute64` implementing the fixed non-identity
+  byte permutation P = (2,5,0,7,1,6,3,4) and `inv_permute64`
+  implementing its exact inverse INV = (2,4,0,6,7,1,5,3), both as
+  explicit shift/mask composition with hardcoded indices, no tables.
+  Differential-tested against an independent table-driven byte loop:
+  1,065,536 cases (65,536 exhaustive 16-bit inputs plus 1M fixed-seed
+  random 64-bit values), 0 mismatches, and the invariants
+  `inv(permute(x)) == x` and `permute(inv(x)) == x` held on every
+  case. Identical FNV-1a checksum f75c74855e39dfd5 across `-O0`,
+  `-O2`, and ASan+UBSan builds. Clean under `-Wall -Wextra
+  -Werror`, no sanitizer reports. Measured at `-O2`: 4.424 ns per
+  permute/inverse call over 2M calls.
+
 ## Building
 
 Each module is self-contained:
