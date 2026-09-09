@@ -34,6 +34,10 @@ committed.
 - `lab/08-seqlock`: sequence lock for single-writer, multi-reader shared
   state. One writer, 4 readers: 10M reads, 0 torn reads, 0 monotonicity
   violations.
+- `lab/06-fault-injection`: single-bit flips injected into ring-buffer
+  frames mid-transfer, caught by the CRC32 check from lab/04. 200,000
+  frames (3.4M words), 6,250 injected corruptions: 6,250 detected, 0
+  missed, 0 false positives.
 
 ## Building
 
