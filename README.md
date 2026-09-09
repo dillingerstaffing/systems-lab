@@ -57,6 +57,20 @@ committed.
   MiB/s vs libc 20085.1-21635.4 on the same host, the gap stated
   honestly in PROOF.md.
 
+- `lab/11-ieee754`: software IEEE-754 binary32 add and multiply built
+  from the bit layout (sign, exponent, fraction) with integer arithmetic
+  only, zero float operations in the implementation; exact significand in
+  `unsigned __int128`, rounded once round-to-nearest-even. 4,000,152
+  differential comparisons against the hardware FPU (38 directed edge
+  pairs: infinities, signed zeros, subnormal boundaries, SNaN/QNaN,
+  rounding ties, plus 1,000,000 biased random pairs), 0 mismatches.
+- `lab/12-buddy-allocator`: buddy allocator with power-of-two splitting
+  and xor-buddy coalescing, validated against the lab/02 bump allocator
+  on an identical churn workload. Checkerboard pattern fragmentation:
+  buddy 0.789 vs bump 0.357; large-block success 5/64 vs 30/64, the
+  trade-off stated honestly in PROOF.md. Free-all coalesces the 64 KiB
+  heap back to one block.
+
 ## Building
 
 Each module is self-contained:
