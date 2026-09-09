@@ -386,6 +386,29 @@ committed.
   `-std=c11 -Wall -Wextra -Werror`, zero sanitizer reports.
   Measured at `-O2`: 219.8 MiB/s.
 
+- `lab/47-ones-complement-sum`: IPv4-style one's-complement checksum
+  with per-addition end-around carry, 16-bit words assembled from
+  bytes with no casts. 9/9 hand-computed vectors pass (empty ->
+  0xFFFF, carry folding of 0xFFFF+0xFFFF, odd-length padding),
+  1,000,000 fixed-seed random buffers (172,733,565 bytes, mixed
+  empty/odd/even lengths) differential-tested against a 64-bit
+  fold-at-end naive reference, 0 mismatches. FNV-1a checksum
+  `0x7ae87b2b2fb7e3e1` identical across `-O0`, `-O2`, ASan+UBSan,
+  and UBSan builds; zero warnings under `-std=c11 -Wall -Wextra
+  -Werror`, zero sanitizer reports. Measured at `-O2`: 857.4 MiB/s.
+
+- `lab/48-nibble-pack`: pack 16 4-bit nibbles into one 64-bit word
+  (and unpack) from shift/OR/mask identities only, no tables.
+  262,144 pack plus 262,144 unpack checks (all 65,536 16-bit values
+  times 4 nibble lanes) differential-tested against an independent
+  bit-loop reference, 0 mismatches; the round-trip invariants
+  `unpack(pack(n)) == n` and `pack(unpack(w)) == w` hold on
+  1,000,000 fixed-seed random words, 0 mismatches. FNV-1a checksum
+  `0x55bf0e9a9dad34f2` identical across `-O0`, `-O2`, ASan+UBSan,
+  and UBSan builds; zero warnings under `-std=c11 -Wall -Wextra
+  -Werror`, zero sanitizer reports. Measured at `-O2`: 27.7 ns
+  per pack+unpack pair.
+
 ## Building
 
 Each module is self-contained:
