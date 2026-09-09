@@ -330,6 +330,14 @@ committed.
   9899f825c9bda325 identical across runs. Measured at `-O2`: 1.58
   ns/value.
 
+
+- `lab/44-bcd-add`: packed BCD add/sub built from the +/-6 nibble
+  correction identities (add 6 when a nibble exceeds 9 after the
+  binary add; subtract 6 on borrow). Differential-tested against a
+  decimal-digit naive reference: 20,000 checks, 0 mismatches,
+  FNV-1a checksum `ff64fdf0ec2142e5` identical across `-O0`, `-O2`,
+  and ASan+UBSan builds. Measured at `-O2`: 3.296 ns/op.
+
 - `lab/39-rotr`: 64-bit rotate right/left built from the shift/OR
   identities (`(x >> r) | (x << ((64 - r) & 63))`, no narrowing
   shift), differential-tested against a naive bit-loop reference and
