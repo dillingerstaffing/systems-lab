@@ -47,6 +47,15 @@ committed.
   key sets: at n=16384 (cache-resident) 214-300 cycles/lookup vs libc
   `bsearch` 227-324; at n=1048576 branchless 585-692 vs `bsearch`
   486-514. Clean under `-O0`, ASan, and UBSan.
+- `lab/10-from-scratch-memcpy`: `memcpy` rebuilt from alignment
+  fundamentals: byte head until the destination is word-aligned, a word
+  body where each source word is assembled from bytes (provably
+  aligned-safe at any source alignment), and a byte tail. 1,004,160
+  differential cases against libc `memcpy` (exhaustive sizes 0-64 at all
+  64 misalignment combinations, plus 1M random sizes to 64 KiB),
+  0 mismatches. Clean under ASan and UBSan. Measured 1338.8-1398.8
+  MiB/s vs libc 20085.1-21635.4 on the same host, the gap stated
+  honestly in PROOF.md.
 
 ## Building
 
