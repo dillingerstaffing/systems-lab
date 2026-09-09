@@ -38,9 +38,13 @@ access and no undefined behavior.
   against the division/loop-based references.
 - Boundary sweep: 97 p values (2^k - 1, 2^k, 2^k + 1 for k = 0..31,
   plus UINT32_MAX) crossed with all 32 powers of two a = 1..2^31 for
-  align_up and align_down: 6,208 boundary checks per primitive.
-- 1,048,576 fixed-seed random 32-bit values per primitive
-  (xorshift32, seed 0x12345678).
+  align_up and align_down (one check per primitive per pair: 6,208
+  checks), and the same 97 p values as x for is_pow2 and round_up_pow2
+  (one check per primitive: 194 checks).
+- Two random loops of 1,048,576 fixed-seed random 32-bit values
+  (xorshift32, seed 0x12345678), each value checked against both
+  primitives of the loop: 2,097,152 checks for align_up/align_down and
+  2,097,152 for is_pow2/round_up_pow2.
 - 22 explicit edge cases: a = 1 (identity), x = 0, x = UINT32_MAX,
   round_up_pow2 overflow returning 0 (including rup2(2^31 + 1) and
   rup2(UINT32_MAX)).
