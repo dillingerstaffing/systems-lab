@@ -122,6 +122,21 @@ committed.
   0 mismatches. Measured throughput: bitwise 35.5 MiB/s vs table
   139.9 MiB/s.
 
+- `lab/19-saturating-arith`: saturating 32-bit add/sub built from the
+  sign-bit overflow identities, differential-tested against a 64-bit
+  reference: 10,000,338 total checks (338 directed edge cases plus
+  10,000,000 random pairs), 0 mismatches, identical checksum
+  1390331946882605843 across `-O0`, `-O2`, and ASan+UBSan builds. Clean
+  under `-Wall -Wextra -Werror`. Measured at `-O2`: 18.2 ns/add,
+  17.7 ns/sub.
+
+- `lab/20-xorshift-period`: xorshift16 PRNG, full period verified by
+  exhaustive state-space traversal: seeds 0x0001 and 0xbeef each visit
+  all 65,535 nonzero states exactly once before returning to the seed
+  (zero confirmed as the only fixed point), matching the theoretical
+  2^16 - 1 period. Clean under `-Wall -Wextra -Werror`, `-O0`, `-O2`,
+  ASan, and UBSan. Measured at `-O2`: about 4.9 ns/step.
+
 ## Building
 
 Each module is self-contained:
