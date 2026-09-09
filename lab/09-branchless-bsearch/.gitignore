@@ -1,0 +1,3 @@
+test_bsearch
+test_bsearch_asan
+test_bsearch_o0

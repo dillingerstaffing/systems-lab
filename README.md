@@ -38,6 +38,15 @@ committed.
   frames mid-transfer, caught by the CRC32 check from lab/04. 200,000
   frames (3.4M words), 6,250 injected corruptions: 6,250 detected, 0
   missed, 0 false positives.
+- `lab/09-branchless-bsearch`: binary search over sorted `uint32_t` with
+  no data-dependent branch in the loop: the comparison becomes a 0/1
+  integer and the window narrows by arithmetic, exactly
+  floor(log2(n))+1 iterations for every key. 211,266 differential checks
+  against libc `bsearch` plus 4M timed lookups, 0 mismatches; hit and
+  miss cost the same by construction. Measured with `rdtsc` on identical
+  key sets: at n=16384 (cache-resident) 214-300 cycles/lookup vs libc
+  `bsearch` 227-324; at n=1048576 branchless 585-692 vs `bsearch`
+  486-514. Clean under `-O0`, ASan, and UBSan.
 
 ## Building
 
