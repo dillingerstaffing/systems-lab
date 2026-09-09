@@ -83,6 +83,22 @@ committed.
   at
   `-Wall -Wextra -Werror` under `-O0`, `-O2`, ASan, and UBSan.
 
+- `lab/15-ticket-ring`: ticket lock on C11 atomics (`fetch_add`
+  tickets, serving admits in ticket order) guarding a bounded MPMC ring
+  buffer. Verified with 4 producers x 250k items: 1M drained, 0 lost,
+  0 duplicates, per-producer FIFO preserved, checksum 499999500000
+  matches; worst fairness gap 4 against ideal 3. Clean under
+  `-Wall -Wextra -Werror`, ASan, and UBSan.
+
+- `lab/16-crc32c`: CRC-32C (Castagnoli) with the lookup table derived
+  from the generator polynomial 0x82F63B78 (all 256 entries match a
+  direct computation) and differential-checked against a bitwise
+  reference: 7 known-answer vectors (including RFC 3720 vectors) x 2
+  implementations all match published values, and 100,321 comparisons
+  (256 exhaustive 1-byte inputs, 65 sizes, 100,000 random buffers) with
+  0 mismatches. Measured throughput: bitwise 35.5 MiB/s vs table
+  139.9 MiB/s.
+
 ## Building
 
 Each module is self-contained:
