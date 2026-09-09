@@ -82,6 +82,17 @@ committed.
   cases (identity, zero, UINT32_MAX, round-up overflow). Zero warnings
   at
   `-Wall -Wextra -Werror` under `-O0`, `-O2`, ASan, and UBSan.
+- `lab/17-bitcount`: 64-bit population count via the SWAR
+  parallel-add masks (0x5555..., 0x3333..., 0x0F0F...) with a
+  multiply-shift fold, differential-checked against
+  `__builtin_popcountll`: 10,000,133 total checks (133 directed edge
+  cases: 0, all-ones, every single-bit position 0..63, alternating
+  patterns, 2^k - 1 for k = 0..64; plus 10,000,000 fixed-seed random
+  64-bit values), 0 mismatches, identical checksums under `-O0`,
+  `-O2`, ASan, and UBSan. Throughput measured at 3.98 ns/value
+  (251.4 Mvalues/s) at `-O2` on the actual SWAR instruction sequence
+  (verified by disassembly, no POPCNT emitted; timed loop includes
+  the PRNG step, so this is a ceiling).
 
 - `lab/15-ticket-ring`: ticket lock on C11 atomics (`fetch_add`
   tickets, serving admits in ticket order) guarding a bounded MPMC ring
