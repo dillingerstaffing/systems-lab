@@ -321,6 +321,15 @@ committed.
   builds. Disassembly of the `-O2` primitive is just `shl`/`sar` with
   the same count register. Measured at `-O2`: 1.08 ns/value.
 
+- `lab/41-mask-below`: low-n-bit mask built from the `2^n - 1` identity
+  (`(1u << n) - 1`, with the n=64 shift-count edge handled without
+  undefined behavior). Differential-tested against a loop-built
+  reference: all 65 widths times 1,000,000 fixed-seed random 64-bit
+  values, 65,000,000 cases, 0 mismatches, invariants `popcount(mask) ==
+  n` and `mask & ~mask == 0` holding on every case. FNV-1a checksum
+  9899f825c9bda325 identical across runs. Measured at `-O2`: 1.58
+  ns/value.
+
 - `lab/39-rotr`: 64-bit rotate right/left built from the shift/OR
   identities (`(x >> r) | (x << ((64 - r) & 63))`, no narrowing
   shift), differential-tested against a naive bit-loop reference and
