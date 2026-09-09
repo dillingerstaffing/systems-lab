@@ -424,6 +424,21 @@ committed.
   zero sanitizer reports. Measured at `-O2`: 4.9 ns/value (timed loop
   with a PRNG step, stated as a ceiling).
 
+- `lab/50-strnlen-wordscan`: bounded `my_strnlen(s, max)` from the
+  word-at-a-time zero-byte detection identity
+  `((w - 0x0101..01) & ~w) & 0x8080..80`: byte head to word alignment,
+  word body loading only words fully inside `[s, s+max)` (never reads
+  past `max`), byte tail. The zero lemma (a zero byte always sets its
+  own 0x80 bit) is proven in PROOF.md. 15/15 hand-checked vectors
+  pass; differential-tested against libc `strnlen` over lengths 0..256
+  at every misalignment 0..7 with five `max` values: 20,480 checks,
+  0 mismatches. Guard-page check (mmaped pages, PROT_NONE after):
+  33 terminator-at-boundary and max-at-guard-edge cases, 0 faults,
+  under ASan and UBSan. FNV-1a fingerprint `0xfe17a11752e1318c`
+  identical across `-O0`, `-O2`, ASan+UBSan, and UBSan builds; zero
+  warnings, zero sanitizer reports. Measured at `-O2`: 31.6 ns/value
+  (200-byte string, stated as a ceiling).
+
 ## Building
 
 Each module is self-contained:
