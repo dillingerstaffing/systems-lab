@@ -272,6 +272,24 @@ committed.
   with no branch and no `cmov`. Measured at `-O2`: 3.650 ns/pair over
   200M timed pairs.
 
+- `lab/27-fixed-point`: Q16.16 fixed-point `add`/`mul` built from 64-bit
+  intermediate identities with round-to-nearest, differential-tested
+  against a `double` reference: 10,001,352 total cases (1,352 directed
+  plus 5M random multiply pairs and 5M random add pairs), 0 mismatches
+  within 1 ulp, identical checksum 9619856039744915734 across `-O0`,
+  `-O2`, and ASan+UBSan builds. Zero warnings at `-Wall -Wextra
+  -Werror`. Measured at `-O2`: 38.78 ns/op (mul) and 29.59 ns/op (add).
+
+- `lab/29-djb2-vs-fnv`: djb2 and FNV-1a built straight from their
+  recurrence identities (djb2 via `(h << 5) + h`, FNV-1a via the prime
+  spelled as shifts and adds), differential-tested against
+  independently written spec implementations plus 10 pinned
+  known-answer vectors: 2,000,010 checks, 0 mismatches, identical
+  checksum 14048541656418671858 across `-O0`, `-O2`, and ASan+UBSan
+  builds. Avalanche measured on 1M random strings (chi-square on
+  digest byte 0): djb2 269.90, FNV-1a 256.87, so FNV-1a spreads better.
+  Measured at `-O2`: djb2 477.4 MB/s, FNV-1a 458.0 MB/s.
+
 ## Building
 
 Each module is self-contained:
