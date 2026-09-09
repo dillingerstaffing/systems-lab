@@ -447,3 +447,5 @@ Each module is self-contained:
 cd lab/01-spsc-ring-buffer
 make run
 ```
+
+- lab/51-branchless-abs-diff: header-only absdiff64 via sign-mask on wrapped difference, 4.295B checks (4.29e9 16-bit exhaustive + 1M random) with 0 mismatches vs llabs, contract excludes d==INT64_MIN only, verified at -O2/-O0/ASan
