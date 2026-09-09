@@ -409,6 +409,21 @@ committed.
   -Werror`, zero sanitizer reports. Measured at `-O2`: 27.7 ns
   per pack+unpack pair.
 
+- `lab/49-div-round-pow2`: round-to-nearest division of a u32 by 2^k
+  from the shift/add-half identities `((x + 2^(k-1)) >> k)` with ties
+  rounding up, computed in a 64-bit intermediate so the identity stays
+  exact over the whole u32 domain (the pure 32-bit form wraps, e.g.
+  x=0xFFFFFFFF, k=31 gives 0 instead of 2). 17/17 hand-checked vectors
+  pass (ties at k=1/7/32, k=0 identity, k=32 bounds, 32-bit-wrap case),
+  differential-tested against the independent rational reference
+  `(2x + 2^k) / 2^(k+1)`: 983,040 exhaustive checks (all 16-bit x,
+  k=1..15) plus 1,000,000 fixed-seed splitmix64 random full-u32 checks
+  (k=1..31), 1,983,040 total, 0 mismatches. FNV-1a checksum
+  `0xee4a225fd47d1345` identical across `-O0`, `-O2`, ASan+UBSan, and
+  UBSan builds; zero warnings under `-std=c11 -Wall -Wextra -Werror`,
+  zero sanitizer reports. Measured at `-O2`: 4.9 ns/value (timed loop
+  with a PRNG step, stated as a ceiling).
+
 ## Building
 
 Each module is self-contained:
