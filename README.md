@@ -204,6 +204,35 @@ committed.
   compilation with no bsr/lzcnt/tzcnt emitted. Measured at `-O2`:
   7.7-7.9 ns/value over 100M timed values (loop includes the PRNG step).
 
+- `lab/24-bit-deposit`: bitfield `extract`/`insert` built only from the
+  shift/mask identities, with the n = 64 mask special case handled so no
+  `1ULL << 64` is ever executed (UBSan confirms it never fires on a
+  shift). Differential-tested against a naive per-bit loop reference:
+  79,777,216 total checks (16,777,216 exhaustive: widths 1..8 x offsets
+  0..15 x all 65536 16-bit inputs for both primitives; plus 63,000,000
+  round-trip cases, widths 1..63 x 1,000,000 fixed-seed splitmix64
+  values, checking `insert(0, off, w, extract(x, off, w)) ==
+  x & (mask_w << off)`), 0 mismatches, identical FNV-1a checksum
+  1148145629208527209 across `-O0`, `-O2`, and ASan+UBSan builds. Clean
+  under `-Wall -Wextra -Werror`, no sanitizer reports. Measured at `-O2`:
+  ~5.1 ns/case over 100M timed cases (each case includes one PRNG step
+  plus one extract and one insert).
+
+- `lab/25-bit-reversal`: 64-bit bit reversal from the SWAR group-swap
+  identities (swap adjacent bits, then 2-bit groups, then nibbles, then
+  bytes via shift/OR; no bit-reverse builtin anywhere in the source).
+  Differential-tested against a naive bit-loop reference that moves bit
+  k to position 63 - k, plus the `reverse(reverse(x)) == x` involution
+  on every case: 10,262,212 total checks (68 directed values, 262144
+  exhaustive 16-bit lanes, 10,000,000 fixed-seed splitmix64 values), 0
+  mismatches, identical FNV-1a checksum 8367746376622110355 across
+  `-O0`, `-O2`, and ASan+UBSan builds. Disassembly at `-O2` shows the
+  size-1/2/4 group swaps surviving as shift/and/or sequences; gcc folds
+  the three byte-swap shift/OR stages into one semantics-preserving
+  `bswap`. Clean under `-Wall -Wextra -Werror`, no sanitizer reports.
+  Measured at `-O2`: ~6.1 ns/value over 100M timed values (loop includes
+  the PRNG step, +-1 ns machine variance observed).
+
 ## Building
 
 Each module is self-contained:
