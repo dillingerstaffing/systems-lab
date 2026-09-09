@@ -310,6 +310,16 @@ committed.
   random buffers, 3,256,296,802 bytes total, 0 mismatches, with length
   coverage across the 5552 block boundary. Clean under `-O0`, `-O2`,
   ASan+UBSan. Measured at `-O2`: 1627.8 to 1787.9 MiB/s.
+- `lab/40-sign-extend`: sign extension of an arbitrary width `w`
+  (1..64) to 64 bits via the arithmetic-shift identity (shift left so
+  bit `w-1` lands on bit 63, then arithmetic right shift to replicate
+  it). Differential-tested against an independent bit-test reference:
+  4,194,311 checks (widths 1..63 x all 65536 16-bit inputs, width 64 x
+  all 65536 16-bit inputs as an identity check, plus 7 directed edge
+  cases including w=64 with INT64_MIN), 0 mismatches, identical FNV-1a
+  checksum `261071a94624789d` across `-O0`, `-O2`, and ASan+UBSan
+  builds. Disassembly of the `-O2` primitive is just `shl`/`sar` with
+  the same count register. Measured at `-O2`: 1.08 ns/value.
 
 - `lab/39-rotr`: 64-bit rotate right/left built from the shift/OR
   identities (`(x >> r) | (x << ((64 - r) & 63))`, no narrowing
