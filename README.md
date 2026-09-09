@@ -28,6 +28,12 @@ committed.
   with a 64-bit ABA tag. Four threads churned 1.6M operations: 262,144
   pushed, 262,144 popped, 0 lost, 0 duplicated, 28,150 stale observations
   rejected by the tag check.
+- `lab/05-fuzz-harness`: deterministic fuzzer over the ring buffer and
+  bump allocator. Same seed, same digest on every run: 6M operations under
+  ASan and UBSan, zero violations.
+- `lab/08-seqlock`: sequence lock for single-writer, multi-reader shared
+  state. One writer, 4 readers: 10M reads, 0 torn reads, 0 monotonicity
+  violations.
 
 ## Building
 
