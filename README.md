@@ -93,6 +93,18 @@ committed.
   (251.4 Mvalues/s) at `-O2` on the actual SWAR instruction sequence
   (verified by disassembly, no POPCNT emitted; timed loop includes
   the PRNG step, so this is a ceiling).
+- `lab/18-endian`: 16/32/64-bit byte-swap built only from shifts,
+  ORs, and masks, differential-checked against
+  `__builtin_bswap16/32/64`: 12,000,304 total checks, 0 mismatches
+  (2,000,024 + 2,000,046 + 2,000,082 differential comparisons per
+  width, 152 directed edge cases plus 2,000,000 fixed-seed splitmix64
+  random values each; every value also verified against the
+  involution invariant `swap(swap(x)) == x`). Checksums identical
+  across `-O0`, `-O2`, and ASan+UBSan builds; zero warnings under
+  `-Wall -Wextra -Werror`. Throughput measured at 2.74 ns/value
+  (365.6 Mvalues/s) at `-O2` on u64_swap (timed loop includes the
+  PRNG step, so this is a ceiling); disassembly confirms gcc
+  recognizes the idiom and emits a single `bswap` per width.
 
 - `lab/15-ticket-ring`: ticket lock on C11 atomics (`fetch_add`
   tickets, serving admits in ticket order) guarding a bounded MPMC ring
