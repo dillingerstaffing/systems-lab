@@ -249,6 +249,17 @@ committed.
   (ffs64) and 4.35 ns/value (fls64) over 100M timed values each (loop
   includes the PRNG step).
 
+- `lab/33-gray-code`: 16-bit Gray code `encode` from `n ^ (n >> 1)` and
+  `decode` from the xor-fold, differential-tested against a naive
+  bit-loop reference over all 65536 16-bit inputs: 262,143 total checks
+  (65,536 encode + 65,536 decode + 65,536 `decode(encode(x)) == x`
+  involution + 65,535 single-bit-adjacency pairs), 0 mismatches,
+  identical FNV-1a checksum 9751602672369123877 across `-O0`, `-O2`,
+  and ASan+UBSan builds. Clean under `-Wall -Wextra -Werror`, no
+  sanitizer reports. Measured at `-O2`: about 4.3 ns/value for both
+  encode and decode over 100M timed values (loop includes the PRNG
+  step, so a ceiling).
+
 ## Building
 
 Each module is self-contained:
