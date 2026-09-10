@@ -2,7 +2,7 @@
 Checks: 4294967296
 Mismatches: 0
 Checksum: f0bc609332350325
-Throughput: 267.73 ns/value at -O2 (uncontended quick run)
+Throughput: 457.67 ns/value at -O2 (1048576 values x 20 reps; uncontended quick run measured 267.73, runs ranged 267-666 with load)
 Environment: Host
 Verdict: PASS
 -->

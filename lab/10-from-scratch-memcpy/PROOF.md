@@ -1,7 +1,7 @@
 <!-- PROOF-HEADER
 Checks: 1004160
 Mismatches: 0
-Throughput: memcpy10 1398.8 MiB/s, libc memcpy 21635.4 MiB/s (64 MiB x 20)
+Throughput: 1398.8 MiB/s (memcpy10), 21635.4 MiB/s (libc memcpy) (64 MiB x 20)
 Environment: Host
 -->
 

@@ -1,5 +1,5 @@
 <!-- PROOF-HEADER
-Checks: 1000000
+Checks: 1000006
 Mismatches: 0
 Throughput: 1627.8 MiB/s at -O2 (256 MiB, 16 MiB buffer; second -O2 run measured 1787.9 MiB/s, machine variance)
 Verdict: PASS
