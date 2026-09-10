@@ -473,3 +473,5 @@ make run
 
 - **lab/58**: signed truncating division by 2^k via sign-bias formula; 1,983,057 checks, 0 mismatches, 2.3 ns/value
 - **lab/59**: uint64 average without overflow via (a&b)+((a^b)>>1); 4.3M checks, 0 mismatches, 2.059 ns/pair
+- **lab/53**: 8-bit to 3-digit packed BCD via shift-and-add-3; 1280 differential checks over all 256 inputs, 0 mismatches vs snprintf, 54.468 ns/value
+- **lab/55**: longest consecutive zero-bit run via shift/AND cascade; 1,065,669 differential checks, 0 mismatches, 31.47 ns/value
