@@ -1,0 +1,21 @@
+
+disasm_mulhi_u16.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <wrap_mulhi_u16>:
+   0:	f3 0f 1e fa          	endbr64
+   4:	0f b7 ff             	movzx  edi,di
+   7:	ba 10 00 00 00       	mov    edx,0x10
+   c:	31 c0                	xor    eax,eax
+   e:	66 90                	xchg   ax,ax
+  10:	40 f6 c6 01          	test   sil,0x1
+  14:	8d 0c 38             	lea    ecx,[rax+rdi*1]
+  17:	0f 45 c1             	cmovne eax,ecx
+  1a:	01 ff                	add    edi,edi
+  1c:	66 d1 ee             	shr    si,1
+  1f:	83 ea 01             	sub    edx,0x1
+  22:	75 ec                	jne    10 <wrap_mulhi_u16+0x10>
+  24:	c1 e8 10             	shr    eax,0x10
+  27:	c3                   	ret
