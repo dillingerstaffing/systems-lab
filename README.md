@@ -468,3 +468,8 @@ make run
 ```
 
 - lab/51-branchless-abs-diff: header-only absdiff64 via sign-mask on wrapped difference, 4.295B checks (4.29e9 16-bit exhaustive + 1M random) with 0 mismatches vs llabs, contract excludes d==INT64_MIN only, verified at -O2/-O0/ASan
+
+- **lab/58**: signed truncating division by 2^k via sign-bias formula; 1,983,057 checks, 0 mismatches, 2.3 ns/value
+
+- **lab/58**: signed truncating division by 2^k via sign-bias formula; 1,983,057 checks, 0 mismatches, 2.3 ns/value
+- **lab/59**: uint64 average without overflow via (a&b)+((a^b)>>1); 4.3M checks, 0 mismatches, 2.059 ns/pair
