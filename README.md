@@ -447,6 +447,16 @@ committed.
   `0x57707ad2ff081ccb` identical across `-O0`, `-O2`, and ASan+UBSan builds;
   zero warnings, zero sanitizer reports. Measured at `-O2`: 8.705 ns/pair
   (round-trip loop, stated as a ceiling since it includes the splitmix64 step).
+- `lab/58-signed-div-pow2`: truncated signed division of int64 by 2^k from
+  the sign-bias identity `(x + ((x >> 63) & (2^k - 1))) >> k`, matching C's
+  `/` (truncation toward zero, not floor). 17/17 hand-checked vectors pass,
+  including `x=-7,k=1 -> -3` and `x=-1,k=1 -> 0` where a bare shift rounds
+  the wrong way; differential-tested against C division over all 16-bit
+  inputs at k=1..15 plus 1,000,000 fixed-seed random 64-bit pairs at
+  k=1..63: 1,983,057 checks, 0 mismatches. FNV-1a fingerprint
+  `0x3fbd3c3962be4d43` identical across `-O0`, `-O2`, ASan+UBSan, and UBSan
+  builds; zero warnings, zero sanitizer reports. Measured at `-O2`:
+  2.3 ns/value (stated as a ceiling).
 
 ## Building
 
