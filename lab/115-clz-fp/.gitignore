@@ -1,0 +1,5 @@
+test_clz_fp
+test_clz_fp_O0
+test_clz_fp_san
+test_clz_fp_bench
+*.log
