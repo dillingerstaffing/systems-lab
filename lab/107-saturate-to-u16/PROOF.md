@@ -1,4 +1,4 @@
-# PROOF.md: lab/94-saturate-to-u16
+# PROOF.md: lab/107-saturate-to-u16
 
 Genuine build log and run output, captured 2026-09-10.  Toolchain:
 gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0.  Flags:

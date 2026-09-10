@@ -1,4 +1,4 @@
-# lab/94-saturate-to-u16
+# lab/107-saturate-to-u16
 
 `saturate_u16(x)`: clamp of an `int32_t` into `[0, 65535]`, returning
 `uint16_t`, branchless.  Contract: `x < 0` yields `0`, `x > 65535`
