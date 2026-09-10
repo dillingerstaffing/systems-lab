@@ -1,0 +1,5 @@
+test_clz_half
+test_clz_half_O0
+test_clz_half_san
+test_clz_half_bench
+*.log
