@@ -1,0 +1,12 @@
+=== O0 ===
+checked=10065536 mismatches=0 fnv1a=ca180bdf75d1ddd9
+timed=26214400 best=18.707 ns/value checksum=4143000
+rc=0
+=== O2 ===
+checked=10065536 mismatches=0 fnv1a=ca180bdf75d1ddd9
+timed=26214400 best=2.244 ns/value checksum=4143000
+rc=0
+=== ASan+UBSan ===
+checked=10065536 mismatches=0 fnv1a=ca180bdf75d1ddd9
+timed=26214400 best=6.967 ns/value checksum=4143000
+rc=0

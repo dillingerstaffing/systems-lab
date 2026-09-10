@@ -1,0 +1,3 @@
+cc -std=c11 -Wall -Wextra -Werror -O0 -o test_o0 main.c
+cc -std=c11 -Wall -Wextra -Werror -O2 -o test_o2 main.c
+cc -std=c11 -Wall -Wextra -Werror -O2 -fsanitize=address,undefined -o test_asan main.c
