@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 20480
+Mismatches: 0
+Checksum: 0xfe17a11752e1318c
+Throughput: 31.6 ns/value at -O2
+Environment: Host
+Verdict: PASS
+-->
 # PROOF: lab/50-strnlen-wordscan
 
 Genuine build log and run output for all four build configs, captured on

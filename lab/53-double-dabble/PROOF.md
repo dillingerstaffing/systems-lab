@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 1280
+Mismatches: 0
+Throughput: 54.468 ns/value at -O2
+Environment: Host
+-->
 # PROOF.md: lab/53-double-dabble
 
 Environment: gcc 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1), x86_64.

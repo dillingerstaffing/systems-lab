@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 10262212
+Mismatches: 0
+Throughput: 6.12 ns/value at -O2 over 100,000,000 values (timed loop includes PRNG step; machine variance roughly +-1 ns)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/25-bit-reversal
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make` from a clean

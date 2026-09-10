@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 4294967308
+Mismatches: 0
+Checksum: 0x31f7e4badfa3e62a
+Throughput: 0.694 ns/value at -O2, best of 5
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/107-saturate-to-u16
 
 Genuine build log and run output, captured 2026-09-10.  Toolchain:

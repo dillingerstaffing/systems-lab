@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 4304967310
+Mismatches: 0
+Checksum: 07ae4885650dd8ca
+Throughput: 2.31 ns/value (432.7 Mvalues/s over 25M timed values, best of 5)
+Environment: Host
+-->
+
 # PROOF: lab/100-branchless-cmp
 
 `bcmp64(a, b)`: returns `-1` if `a < b`, `0` if `a == b`, `+1` if

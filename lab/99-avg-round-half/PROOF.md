@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 4304967309
+Mismatches: 0
+Checksum: 1f09d1d42620ee61
+Throughput: 10.11 ns/value at -O2, best of 5
+Environment: Host
+Verdict: PASS
+-->
 # PROOF: lab/99-avg-round-half
 
 `avg_rhu_u64(a, b)`: round-half-up average of two `uint64_t` values,

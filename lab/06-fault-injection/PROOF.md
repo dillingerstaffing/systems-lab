@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Mismatches: 0
+Throughput: 18.0 Mwords/s (push+pop counted, fault-off)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/06-fault-injection
 
 Date: 2026-09-08. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

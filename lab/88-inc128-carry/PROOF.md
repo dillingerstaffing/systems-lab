@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4295967301
+Mismatches: 0
+Checksum: e7c096581363da96
+Throughput: 4.85 ns/value at -O2, best of 5
+Environment: Host
+-->
 # PROOF: lab/88-inc128-carry
 
 `inc128(x)`: add 1 to the 128-bit value held as `(hi, lo)` of two

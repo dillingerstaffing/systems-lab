@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Throughput: 19306.6 kops/s (798 ops in 41.3 us, churn phase)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/02-bump-allocator
 
 Date: 2026-09-08. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

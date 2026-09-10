@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 2000010
+Mismatches: 0
+Throughput: djb2 477.4 MB/s, fnv1a 458.0 MB/s at -O2 (1 MiB buffer, 2000 rounds; single-run figures with rerun variance)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/29-djb2-vs-fnv
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make` from a clean

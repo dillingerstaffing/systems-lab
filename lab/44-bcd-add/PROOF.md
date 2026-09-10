@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 20000
+Mismatches: 0
+Checksum: ff64fdf0ec2142e5
+Throughput: 3.296 ns per op at -O2 (40,000,000 ops total; repeat runs ranged 3.3 to 4.6 ns per op)
+Environment: Host
+-->
+
 # PROOF.md: lab/44-bcd-add
 
 Environment: gcc 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1), x86_64.

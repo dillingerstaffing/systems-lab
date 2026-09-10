@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 65000000
+Mismatches: 0
+Checksum: cf623e770a179ce5
+Throughput: 3.379 ns per value at -O2
+Environment: Host
+-->
 # PROOF.md: lab/60-mask-above
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

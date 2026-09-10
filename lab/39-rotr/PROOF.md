@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 4194304
+Mismatches: 0
+Throughput: rotr 2.73 ns/value, rotl 2.66 ns/value at -O2 (100M values; timed loop includes one splitmix64 PRNG step per value)
+-->
+
 # lab/39-rotr: proof log
 
 `make clean && make all` on 2026-09-09 (gcc 13.3.0, Ubuntu 24.04).

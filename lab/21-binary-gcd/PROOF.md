@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 2048576
+Mismatches: 0
+Throughput: 528.21 ns/pair at -O2 over 1,000,000 pairs (timed sweep includes PRNG step, oracle comparison, checksum accumulation)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/21-binary-gcd
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 2065536
+Mismatches: 0
+Checksum: d42f33eaf01cd639
+Throughput: 4.26 ns/value (234.6 Mvalues/s) at -O2 over 25,000,000 values
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF: lab/35-parity-fold
 
 `parity64(uint64_t x)` in `parity.c`, built only from the xor-fold

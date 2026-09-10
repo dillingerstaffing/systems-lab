@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 8599934628
+Mismatches: 0
+Checksum: 0xfce86f5578b4ca16
+Throughput: 4.55 ns/value at -O2, best of 5 (over 1000000 pre-generated cases, PRNG outside timed region)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/106-sub-borrow-chain
 
 Date: 2026-09-10. Machine: x86_64, gcc 13.3.0 (Ubuntu 24.04).

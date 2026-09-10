@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 10065622
+Mismatches: 0
+Checksum: 0xdb2cc52bd54d6a06
+Throughput: 3.031 ns/value at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md - lab/72-bitmatrix-transpose
 
 `bitmatrix_transpose64`: transpose of an 8x8 bit matrix packed in a

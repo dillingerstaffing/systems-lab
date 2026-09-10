@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Mismatches: 0
+Checksum: 0x55bf0e9a9dad34f2
+Throughput: 27.7 ns/pair at -O2 (2,000,000 pack+unpack pairs in 0.055 s; timing figures vary run to run)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF: lab/48-nibble-pack
 
 Genuine build log and run output for all four build configs, captured on

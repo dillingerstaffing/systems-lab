@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 4294967296
+Mismatches: 0
+Checksum: 0x5ae86dd58b5d3a01
+Throughput: 2.29 ns/value at -O2, best of 5 (over 4194304 values)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/28-tie-to-even-half
 
 Date: 2026-09-10. Machine: x86_64, gcc 13.3.0 (Ubuntu 24.04).

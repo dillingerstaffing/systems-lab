@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Throughput: 3.68-4.92 ns/step at -O2 (two 65,535-step walks; timed loop includes visited-array store, checks, bookkeeping)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/20-xorshift-period
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

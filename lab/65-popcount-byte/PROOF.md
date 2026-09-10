@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065792
+Mismatches: 0
+Checksum: 0xe1fc995406ad5592
+Throughput: 7.405 ns/value at -O2 (mean of 5 passes)
+Environment: Host
+-->
 # PROOF.md: lab/65-popcount-byte
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64, run 2026-09-09.

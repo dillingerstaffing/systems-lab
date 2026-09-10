@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 10000338
+Mismatches: 0
+Throughput: add 18.19 ns/op, sub 17.70 ns/op at -O2 over 5,000,000 pairs each (timed loop includes PRNG step, differential comparison, checksum accumulation)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/19-saturating-arith
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

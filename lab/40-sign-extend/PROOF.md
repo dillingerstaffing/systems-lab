@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4194311
+Mismatches: 0
+Checksum: 0x261071a94624789d
+Throughput: 1.08 ns/value at -O2 (20M values, widths 1..64 exercised, CLOCK_MONOTONIC timed)
+-->
+
 # PROOF.md: lab/40-sign-extend
 
 ## Build log (verbatim)

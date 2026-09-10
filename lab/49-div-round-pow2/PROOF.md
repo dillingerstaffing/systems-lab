@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 1983040
+Mismatches: 0
+Checksum: 0xee4a225fd47d1345
+Throughput: 4.9 ns/value at -O2 (40,000,000 calls in 0.195 s)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF: lab/49-div-round-pow2
 
 Genuine build log and run output for all four build configs, captured on

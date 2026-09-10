@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 4309161635
+Mismatches: 0
+Checksum: 0x64d1c937981935ce
+Verdict: PASS
+-->
 # PROOF.md: lab/78-swar-max
 
 Genuine build log and run output, captured 2026-09-10.  Toolchain:

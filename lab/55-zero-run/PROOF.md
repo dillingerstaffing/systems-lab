@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065669
+Mismatches: 0
+Throughput: 31.47 ns/value at -O2
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/55-zero-run
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

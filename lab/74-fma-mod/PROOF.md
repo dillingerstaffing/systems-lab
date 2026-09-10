@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 34369738593
+Mismatches: 0
+Checksum: 0xee898af0ca125a96
+Throughput: 2.144 ns/triple at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md - lab/74-fma-mod
 
 `fma_mod64(a, b, c)` in `fma_mod.h`: the exact value `(a * b + c) mod

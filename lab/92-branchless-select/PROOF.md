@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 8599934601
+Mismatches: 0
+Checksum: 47f9a66e9c481f08
+Throughput: 2.68 ns/value at -O2, best of 5
+Environment: Host
+-->
 # PROOF: lab/92-branchless-select
 
 `bselect(sel, a, b)`: returns `b` if `sel == 1`, `a` if `sel == 0`,

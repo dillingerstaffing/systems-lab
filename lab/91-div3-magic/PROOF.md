@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065555
+Mismatches: 0
+Checksum: b2e1fc5468e18c88
+Throughput: 2.221 ns/value at -O2, best of 5
+Environment: Host
+-->
 # PROOF: lab/91-div3-magic
 
 `div3_u32(x)`: floor(x / 3) for unsigned 32-bit x, computed as

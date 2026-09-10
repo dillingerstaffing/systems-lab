@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065866
+Mismatches: 0
+Checksum: 0x45C10F152E119ECB
+Throughput: 1.767 ns/value at -O2
+Environment: Host
+-->
 # PROOF.md: lab/66-clz-byte
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

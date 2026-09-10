@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4200728
+Mismatches: 0
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/14-align-arith
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

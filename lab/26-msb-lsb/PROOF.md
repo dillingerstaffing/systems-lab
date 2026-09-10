@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 131335
+Mismatches: 0
+Throughput: ffs64 3.74 ns/value, fls64 4.35 ns/value at -O2 over 100,000,000 timed values each
+-->
+
 # PROOF: lab/26-msb-lsb
 
 ## What was built

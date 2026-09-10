@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 1000000
+Mismatches: 0
+Checksum: 0x903aa7957d888495
+Throughput: 219.8 MiB/s at -O2 (256.0 MiB in 1.165 s)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/46-fletcher16
 
 Environment: gcc 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1), x86_64.

@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4304971681
+Mismatches: 0
+Checksum: 0x9c7c2747bf0beb25
+Throughput: 1.645 ns/pair at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md - lab/73-mullo-split
 
 `mullo64`: low 64 bits of the product of two `uint64_t`, from the

@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 4294967296
+Mismatches: 0
+Checksum: 8de5b49f4d62f90d
+Throughput: 4.589 ns/op at -O2
+-->
 # PROOF.md: lab/68-swar-sat-add
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

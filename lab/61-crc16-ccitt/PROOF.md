@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1000000
+Mismatches: 0
+Checksum: 8c5660cc04fdd62d
+Throughput: 53.9 MiB/s at -O2
+Environment: Host
+-->
 # PROOF.md: lab/61-crc16-ccitt
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

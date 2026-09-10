@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 10000000
+Mismatches: 0
+Throughput: 4.73 Mreads/s across readers
+Verdict: PASS
+-->
+
 # PROOF.md — lab/08-seqlock
 
 ## Build

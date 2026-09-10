@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 1000256
+Mismatches: 0
+Checksum: a2efc13368379e59
+Throughput: table-driven 197.9 MiB/s at -O2
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/79-crc16-table
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

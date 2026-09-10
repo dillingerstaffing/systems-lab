@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Throughput: buddy 5582.6 kops/s, bump 18586.7 kops/s (churn; varies run to run)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/12-buddy-allocator
 
 Date: 2026-09-08 (UTC 2026-09-09). Machine: x86_64, 2 cores,

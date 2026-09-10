@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 10001352
+Mismatches: 0
+Throughput: mul 38.78 ns/op, add 29.59 ns/op at -O2 over 5,000,000 pairs each (timing loops include PRNG step, oracle comparison, double-reference check, checksum accumulation)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/27-fixed-point
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean`, then

@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Mismatches: 0
+Checksum: 0x45777d315651eb4c
+Throughput: 2.27 ns/value at -O2, best of 5
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/84-round-up-pow2
 
 Date: 2026-09-10. Machine: x86_64, gcc 13.3.0 (Ubuntu 24.04).

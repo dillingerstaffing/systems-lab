@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4295967296
+Mismatches: 0
+Checksum: afa682b2de8a9162
+Throughput: 2.689 ns/pair at -O2, best of 5 runs over 100,000,000 pairs
+-->
+
 # PROOF.md: lab/13-xor-swap
 
 ## What was built

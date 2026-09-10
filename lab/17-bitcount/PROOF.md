@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 10000133
+Mismatches: 0
+Throughput: 3.98 ns/value (251.4 Mvalues/s) at -O2 over 100,000,000 values (timed loop includes PRNG step)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/17-bitcount
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

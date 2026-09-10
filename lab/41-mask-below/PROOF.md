@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 65000000
+Mismatches: 0
+Checksum: 9899f825c9bda325
+Throughput: 1.578 ns per mask value at -O2 (50,000,000 iteration loop, mask_below(i % 65), results xor-folded into printed accumulator)
+Environment: Host
+-->
+
 # PROOF.md: lab/41-mask-below
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

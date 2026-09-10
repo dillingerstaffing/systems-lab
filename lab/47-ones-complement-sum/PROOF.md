@@ -1,3 +1,12 @@
+<!-- PROOF-HEADER
+Checks: 1000000
+Mismatches: 0
+Checksum: 0x7ae87b2b2fb7e3e1
+Throughput: 857.4 MiB/s at -O2 (256.0 MiB in 0.299 s)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/47-ones-complement-sum
 
 Environment: gcc 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1), x86_64.

@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 8385
+Mismatches: 0
+Throughput: my_memmove 1203.0 MiB/s, libc_memmove 44132.1 MiB/s at -O2 (backward_overlap 4 MiB x 200; varies with machine load, roughly 1.0-1.7 GiB/s at -O2)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/30-memmove-overlap
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

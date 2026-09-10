@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065536
+Mismatches: 0
+Checksum: 6c73cad58aa2174f
+Throughput: 2.169 ns/value at -O2
+Environment: Host
+-->
 # PROOF.md, lab/96-isolate-lowest
 
 `iso_lowest(x) = x & -x` for 64-bit words, with `-x` computed as

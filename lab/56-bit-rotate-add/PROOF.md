@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 64000000
+Mismatches: 0
+Throughput: 10.51 ns/value at -O2
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/56-bit-rotate-add
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

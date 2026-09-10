@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 12000304
+Mismatches: 0
+Throughput: 2.74 ns/value (365.6 Mvalues/s) at -O2 over 100,000,000 values (timed loop includes PRNG step)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/18-endian
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make clean` then

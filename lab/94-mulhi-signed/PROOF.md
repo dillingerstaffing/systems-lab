@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4304979732
+Mismatches: 0
+Checksum: 0x3282d931333f6a85
+Throughput: 5.942 ns/pair at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md: lab/94-mulhi-signed
 
 `mulhi_s64(a, b)`: the high 64 bits of the signed 128-bit product of

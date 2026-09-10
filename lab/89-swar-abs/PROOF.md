@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 11310948
+Mismatches: 0
+Checksum: 0xd2d96df3ef5780e2
+Throughput: 1.210 ns/value at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md: lab/89-swar-abs
 
 Genuine build log and run output, captured 2026-09-10.  Toolchain:

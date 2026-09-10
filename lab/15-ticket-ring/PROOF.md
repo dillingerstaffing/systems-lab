@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Throughput: 0.3 Mops/s (push+pop counted)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/15-ticket-ring
 
 Date: 2026-09-09. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

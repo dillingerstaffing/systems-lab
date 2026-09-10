@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 8590934616
+Mismatches: 0
+Checksum: 0xd0a64bebc1998760
+Throughput: 12.526 ns/value at -O2
+Environment: Host
+-->
 # PROOF.md: lab/85-add-carry-chain
 
 Date: 2026-09-10. Machine: x86_64, gcc 13.3.0 (Ubuntu 24.04).

@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4304971681
+Mismatches: 0
+Checksum: 0x309d79ae453ace68
+Throughput: 2.744 ns/pair at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md - lab/70-mul-high
 
 `mul_high64`: high 64 bits of the 128-bit product of two `uint64_t`,

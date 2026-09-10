@@ -1,3 +1,8 @@
+<!-- PROOF-HEADER
+Mismatches: 0
+Verdict: PASS
+-->
+
 # PROOF.md — lab/07-lockfree-stack
 
 ## Build

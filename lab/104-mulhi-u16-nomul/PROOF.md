@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 4294967673
+Mismatches: 0
+Checksum: 0xbe84b05c63e3bea1
+Throughput: 11.807 ns/pair, best of 5
+Verdict: PASS
+-->
+
 # PROOF.md: lab/104-mulhi-u16-nomul
 
 `mulhi_u16(a, b)` in `mulhi_u16.h`: the high 16 bits of the 32-bit

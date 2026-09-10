@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Throughput: 190.4 Mops/s (push+pop counted)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/01-spsc-ring-buffer
 
 Date: 2026-09-08. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

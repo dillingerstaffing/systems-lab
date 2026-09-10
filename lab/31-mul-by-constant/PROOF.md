@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 256000000
+Mismatches: 0
+Throughput: 9.09 ns/multiply (110.0 Mops/s) at -O2 over 100,000,000 values
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/31-mul-by-constant
 
 Environment: gcc 13.3.0 (Ubuntu 24.04.5 LTS), x86_64 host machine

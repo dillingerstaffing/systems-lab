@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 10065685
+Mismatches: 0
+Checksum: 0x7c36594632d8db46
+Throughput: 7.210 ns/value at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md: lab/77-bit-span
 
 Genuine build log and run output, captured 2026-09-10.  Toolchain:

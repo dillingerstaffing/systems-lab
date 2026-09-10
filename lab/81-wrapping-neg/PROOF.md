@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065537
+Mismatches: 0
+Checksum: 0x6f25fc9c8181575a
+Throughput: 0.594 ns/value at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md: lab/81-wrapping-neg
 
 Genuine build log and run output, captured 2026-09-10.  Toolchain:

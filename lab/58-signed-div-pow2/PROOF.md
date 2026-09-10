@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 1983057
+Mismatches: 0
+Checksum: 0x3fbd3c3962be4d43
+Throughput: 2.3 ns/value at -O2
+Environment: Host
+Verdict: PASS
+-->
 # PROOF: lab/58-signed-div-pow2
 Genuine build log and run output for all four build configs, captured on
 2026-09-09 (gcc 13.3.0, Ubuntu 24.04, x86-64). Every number below is copied

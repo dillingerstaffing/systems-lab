@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 4294967296
+Mismatches: 0
+Checksum: f0bc609332350325
+Throughput: 267.73 ns/value at -O2 (uncontended quick run)
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/69-isqrt
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

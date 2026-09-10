@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1004160
+Mismatches: 0
+Throughput: memcpy10 1398.8 MiB/s, libc memcpy 21635.4 MiB/s (64 MiB x 20)
+Environment: Host
+-->
+
 # PROOF: lab/10-from-scratch-memcpy
 
 Date: 2026-09-08. Host: x86-64, gcc 13.3.0, `-Wall -Wextra -Werror -O2`.

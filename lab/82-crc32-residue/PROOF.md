@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 1000000
+Mismatches: 0
+Checksum: 0x277d10c8b7ea96ec
+Throughput: 207.7 MiB/s at -O2
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/82-crc32-residue
 
 Date: 2026-09-10. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

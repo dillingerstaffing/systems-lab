@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4000152
+Mismatches: 0
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF: lab/11-ieee754
 
 Date: 2026-09-08. Host: x86-64, gcc 13.3.0, `-Wall -Wextra -Werror -O2`.

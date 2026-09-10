@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 10000073
+Mismatches: 0
+Checksum: b80215e1eb7bac94
+Throughput: 5.69 ns/pair (175.6 Mpairs/s) at -O2 over 100,000,000 pairs (timed loop includes two splitmix64 steps per pair, a ceiling)
+Verdict: PASS
+-->
+
 # PROOF: lab/45-hamming-dist
 
 Hamming distance of two 64-bit words, `d(a, b) = popcount(a ^ b)`,

@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 10065744
+Mismatches: 0
+Checksum: 0x52130d09b192774b
+Throughput: 6.047 ns/value at -O2, best of 50
+Verdict: PASS
+-->
 # PROOF.md - lab/76-ceil-log2
 
 `ceil_log2_64(x)` in `ceil_log2.h`: the smallest n with 2^n >= x,

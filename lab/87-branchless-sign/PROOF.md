@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065541
+Mismatches: 0
+Checksum: 21a06a0e15a1874e
+Throughput: 2.22 ns/value at -O2, best of 5
+Environment: Host
+-->
 # PROOF: lab/87-branchless-sign
 
 `sign64(x)`: -1 if `x < 0`, 0 if `x == 0`, +1 if `x > 0`, for every

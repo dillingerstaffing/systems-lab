@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 21777945
+Mismatches: 0
+Checksum: 0x14fbc28750757f72
+Throughput: 10.379 ns/triple at -O2
+Verdict: PASS
+-->
 # PROOF.md — lab/64-median-of-three
 
 `med3(a, b, c)`: median of three `int64_t` values as a 3-element

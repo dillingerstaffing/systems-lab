@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4304967524
+Mismatches: 0
+Checksum: 0xfdf651d8a57e9cd1
+Throughput: 4.300 ns/pair at -O2
+Environment: Host
+-->
 # PROOF.md, lab/57-saturating-sub-borrow
 
 `sat_sub64(a, b)`: unsigned saturating subtraction, `a - b` when

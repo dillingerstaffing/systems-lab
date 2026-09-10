@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 100321
+Mismatches: 0
+Throughput: bitwise 35.5 MiB/s, table-driven 139.9 MiB/s (32 MiB buffer, single run, times vary run to run)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/16-crc32c
 
 Date: 2026-09-09. Machine: x86_64, gcc 13.3.0 (Ubuntu 24.04).

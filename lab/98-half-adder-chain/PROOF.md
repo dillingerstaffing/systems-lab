@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 8590934630
+Mismatches: 0
+Checksum: 0x9f329e5c34e37e5c
+Throughput: 299.17 ns/value at -O2, best of 5
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/98-half-adder-chain
 
 Date: 2026-09-10. Machine: x86_64, gcc 13.3.0 (Ubuntu 24.04).

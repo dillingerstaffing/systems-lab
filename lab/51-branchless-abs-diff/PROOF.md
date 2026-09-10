@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4295967353
+Mismatches: 0
+Checksum: 0xb2fe6b37b79e710f
+Throughput: 4.389 ns/pair at -O2
+Verdict: PASS
+-->
 # PROOF.md — lab/51-branchless-abs-diff
 
 `badiff64(a, b)`: absolute difference of two `int64_t` values as a

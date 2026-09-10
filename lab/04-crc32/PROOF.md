@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Throughput: bitwise 56.1 MB/s, table 231.3 MB/s at -O2 (32 MiB buffer, 5 runs each, mean)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/04-crc32
 
 Date: 2026-09-08. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 1065536
+Mismatches: 0
+Checksum: f75c74855e39dfd5
+Throughput: 4.424 ns per call at -O2 (2,000,000 permute/inverse calls on random inputs)
+Environment: Host
+-->
+
 # PROOF.md: lab/43-byte-permute
 
 Environment: gcc 13.3.0 (Ubuntu), x86_64.

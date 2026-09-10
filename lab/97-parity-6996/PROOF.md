@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065536
+Mismatches: 0
+Checksum: c934e844f0908c2e
+Throughput: 3.44 ns/value at -O2, best of 5
+Environment: Host
+-->
 # PROOF: lab/97-parity-6996
 
 `parity32(x)`: 1 if the 32-bit word `x` has an odd number of set

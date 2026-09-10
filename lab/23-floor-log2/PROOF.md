@@ -1,3 +1,11 @@
+<!-- PROOF-HEADER
+Checks: 10000193
+Mismatches: 0
+Throughput: 7.79 ns/value at -O2 over 100,000,000 values (timed loop includes PRNG step; machine variance roughly +-0.2 ns)
+Environment: Host
+Verdict: PASS
+-->
+
 # PROOF.md: lab/23-floor-log2
 
 Environment: gcc 13.3.0 (Ubuntu 24.04), x86_64. `make` from a clean

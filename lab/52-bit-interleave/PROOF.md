@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 20196608
+Mismatches: 0
+Checksum: 0x57707ad2ff081ccb
+Throughput: 8.705 ns/pair at -O2
+Verdict: PASS
+-->
 # PROOF.md — lab/52-bit-interleave
 
 `morton_interleave(lo, hi)`: spreads the 16 bits of each input into

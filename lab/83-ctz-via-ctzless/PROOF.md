@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Mismatches: 0
+Checksum: 0xdd36dc676b59b047
+Throughput: 3.00 ns/value at -O2, best of 5
+Environment: Host
+Verdict: PASS
+-->
 # PROOF.md: lab/83-ctz-via-ctzless
 
 Date: 2026-09-10. Machine: x86_64, 2 cores, gcc 13.3.0 (Ubuntu 24.04).

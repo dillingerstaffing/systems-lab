@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 1065547
+Mismatches: 0
+Checksum: 0x6e1b8f0f3391f907
+Throughput: 5.146 ns/pair at -O2, best of 5
+Verdict: PASS
+-->
 # PROOF.md — lab/86-saturating-add
 
 ## Build

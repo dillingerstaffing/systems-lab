@@ -1,3 +1,10 @@
+<!-- PROOF-HEADER
+Checks: 4304967345
+Mismatches: 0
+Throughput: 3.650 ns/pair at -O2 over 200,000,000 pairs
+Verdict: PASS
+-->
+
 # PROOF.md — lab/34-branchless-minmax
 
 ## Build

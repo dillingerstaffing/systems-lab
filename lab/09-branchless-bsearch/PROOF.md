@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 4211266
+Mismatches: 0
+Verdict: PASS
+-->
+
 # PROOF.md — lab/09-branchless-bsearch
 
 ## Build

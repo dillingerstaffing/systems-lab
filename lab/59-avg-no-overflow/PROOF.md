@@ -1,3 +1,9 @@
+<!-- PROOF-HEADER
+Checks: 4304967440
+Mismatches: 0
+Throughput: 2.059 ns/pair at -O2
+Verdict: PASS
+-->
 # PROOF.md — lab/59-avg-no-overflow
 
 `avg_u64(a, b)`: floor of `(a + b) / 2` for two `uint64_t` values,
