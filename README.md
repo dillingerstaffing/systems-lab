@@ -469,10 +469,10 @@ make run
 
 - lab/51-branchless-abs-diff: header-only absdiff64 via sign-mask on wrapped difference, 4.295B checks (4.29e9 16-bit exhaustive + 1M random) with 0 mismatches vs llabs, contract excludes d==INT64_MIN only, verified at -O2/-O0/ASan
 
+- **lab/56**: 64-bit rotate-left composed with wrapping add from the shift modulo identity; 64,000,000 differential checks (64 amounts x 1M values), 0 mismatches, 10.51 ns/value
+- **lab/57**: branch-free unsigned saturating subtract from the borrow-out identity; 4,304,967,296 checks (2^16 x 2^16 exhaustive + 10M random), 0 mismatches, 4.300 ns/pair
 - **lab/58**: signed truncating division by 2^k via sign-bias formula; 1,983,057 checks, 0 mismatches, 2.3 ns/value
-
-- **lab/58**: signed truncating division by 2^k via sign-bias formula; 1,983,057 checks, 0 mismatches, 2.3 ns/value
-- **lab/59**: uint64 average without overflow via (a&b)+((a^b)>>1); 4.3M checks, 0 mismatches, 2.059 ns/pair
+- **lab/59**: uint64 average without overflow via (a&b)+((a^b)>>1); 4,304,967,440 checks, 0 mismatches, 2.059 ns/pair
 - **lab/53**: 8-bit to 3-digit packed BCD via shift-and-add-3; 1280 differential checks over all 256 inputs, 0 mismatches vs snprintf, 54.468 ns/value
 - **lab/55**: longest consecutive zero-bit run via shift/AND cascade; 1,065,669 differential checks, 0 mismatches, 31.47 ns/value
 - **lab/60**: high-n-bit mask via `~0ULL << (64 - n)` (n=0 returns 0, n=64 shifts by 0, no shift by 64 ever executes); 65,000,000 differential checks over all 65 widths x 1M fixed-seed values, 0 mismatches, popcount/contiguity invariants hold on every case, FNV-1a 0xcf623e770a179ce5 identical across -O0/-O2/ASan+UBSan, 3.379 ns/value
