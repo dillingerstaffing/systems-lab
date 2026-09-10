@@ -1,0 +1,5 @@
+test_avg_round_half
+test_avg_round_half_O0
+test_avg_round_half_san
+test_avg_round_half_bench
+*.log
