@@ -1,0 +1,6 @@
+test_O0
+test_O2
+test_asan
+bench_O2
+*.o
+*.dis
