@@ -1,0 +1,40 @@
+### build: gcc -std=c11 -O2 -Wall -Wextra -Werror
+$ make
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_pte_permits test_pte_permits.c pte_permits.c
+
+$ ./test_pte_permits
+checks=96 mismatches=0 checksum=efd3419afd2b56cb
+elapsed=0.000 s (30.042 ns/check)
+header-checks=96
+header-mismatches=0
+header-checksum=efd3419afd2b56cb
+
+### build: -O0
+gcc -std=c11 -O0 -Wall -Wextra -Werror -o test_pte_permits_o0 test_pte_permits.c pte_permits.c
+./test_pte_permits_o0
+checks=96 mismatches=0 checksum=efd3419afd2b56cb
+elapsed=0.000 s (85.646 ns/check)
+header-checks=96
+header-mismatches=0
+header-checksum=efd3419afd2b56cb
+
+### build: ASan+UBSan
+gcc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -o test_pte_permits_asan test_pte_permits.c pte_permits.c
+./test_pte_permits_asan
+checks=96 mismatches=0 checksum=efd3419afd2b56cb
+elapsed=0.000 s (43.510 ns/check)
+header-checks=96
+header-mismatches=0
+header-checksum=efd3419afd2b56cb
+
+### bench: -O2, 10M checks x 5 reps
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_pte_permits bench_pte_permits.c pte_permits.c
+./bench_pte_permits
+rep 0: 47385798 ns total, 4.739 ns/check
+rep 1: 45702824 ns total, 4.570 ns/check
+rep 2: 46401893 ns total, 4.640 ns/check
+rep 3: 44231697 ns total, 4.423 ns/check
+rep 4: 46086419 ns total, 4.609 ns/check
+best=4.423 ns/check
+header-throughput=4.423 ns/check
+sink=3417294591 (accumulator kept live)
