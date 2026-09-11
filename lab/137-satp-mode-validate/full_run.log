@@ -1,0 +1,31 @@
+$ make clean && make && make run && make opt0 && make sanitize && make bench
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_satp_mode_validate test_satp_mode_validate.c satp_mode_validate.c
+./test_satp_mode_validate
+mode= 0 got=1 want=1
+mode= 1 got=0 want=0
+mode= 2 got=0 want=0
+mode= 3 got=0 want=0
+mode= 4 got=0 want=0
+mode= 5 got=0 want=0
+mode= 6 got=0 want=0
+mode= 7 got=0 want=0
+mode= 8 got=1 want=1
+mode= 9 got=1 want=1
+mode=10 got=1 want=1
+mode=11 got=0 want=0
+mode=12 got=0 want=0
+mode=13 got=0 want=0
+mode=14 got=0 want=0
+mode=15 got=0 want=0
+mode=16 got=0 want=0
+mode=17 got=0 want=0
+mode=31 got=0 want=0
+mode=32 got=0 want=0
+mode=100 got=0 want=0
+mode=4294967295 got=0 want=0
+checks=22 mismatches=0 checksum=7eedb40a7904b74b
+checks=22 mismatches=0 checksum=7eedb40a7904b74b
+checks=22 mismatches=0 checksum=7eedb40a7904b74b
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_satp_mode_validate bench_satp_mode_validate.c satp_mode_validate.c
+./bench_satp_mode_validate
+2.151 ns/validate at -O2 (best of 5, N=50000000)
