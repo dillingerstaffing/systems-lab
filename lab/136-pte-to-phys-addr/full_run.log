@@ -1,0 +1,20 @@
+$ make
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_pte_phys test_pte_phys.c pte_phys.c
+$ make run
+./test_pte_phys
+checks=60331824 mismatches=0 checksum=235e187d99433244
+header-checks=60331824
+header-mismatches=0
+header-checksum=235e187d99433244
+$ make opt0
+$ make sanitize
+$ make bench
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_pte_phys bench_pte_phys.c pte_phys.c
+./bench_pte_phys
+rep 0: 42994262 ns total, 4.299 ns/conversion
+rep 1: 42749625 ns total, 4.275 ns/conversion
+rep 2: 43226791 ns total, 4.323 ns/conversion
+rep 3: 43056925 ns total, 4.306 ns/conversion
+rep 4: 43481984 ns total, 4.348 ns/conversion
+best=4.275 ns/conversion
+sink=3926418500 (accumulator kept live)
