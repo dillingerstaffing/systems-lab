@@ -1,0 +1,29 @@
+$ make
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_pte_step test_pte_step.c pte_step.c oracle_step.c
+$ make run
+./test_pte_step
+checks=12359296 mismatches=0 checksum=642afcdb30902952
+exhaustive=2359296 random=10000000
+leaf_phys_cross_checks=64449
+descend_ppn_cross_checks=1069
+ignored_invariance_bases=294912 violations=0
+$ make opt0
+gcc -std=c11 -O0 -Wall -Wextra -Werror -o test_pte_step_o0 test_pte_step.c pte_step.c oracle_step.c
+./test_pte_step_o0
+checks=12359296 mismatches=0 checksum=642afcdb30902952
+exhaustive=2359296 random=10000000
+leaf_phys_cross_checks=64449
+descend_ppn_cross_checks=1069
+ignored_invariance_bases=294912 violations=0
+$ make sanitize
+gcc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -o test_pte_step_asan test_pte_step.c pte_step.c oracle_step.c
+./test_pte_step_asan
+checks=12359296 mismatches=0 checksum=642afcdb30902952
+exhaustive=2359296 random=10000000
+leaf_phys_cross_checks=64449
+descend_ppn_cross_checks=1069
+ignored_invariance_bases=294912 violations=0
+$ make bench
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_pte_step bench_pte_step.c pte_step.c
+./bench_pte_step
+11.026 ns/step at -O2 (best of 5, N=2000000, sink=5885)
