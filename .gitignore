@@ -2,3 +2,5 @@ lab/*/test_*_o0
 lab/*/test_*_o2
 lab/*/test_*_asan
 lab/*/*.o
+lab/*/test_*
+lab/*/bench_*
