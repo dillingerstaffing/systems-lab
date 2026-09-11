@@ -4,3 +4,5 @@ lab/*/test_*_asan
 lab/*/*.o
 lab/149-pte-permission-and/test_walk_permits
 lab/149-pte-permission-and/bench_walk_permits
+lab/147-pte-global-bit/test_pte_global
+lab/147-pte-global-bit/bench_tlb_lookup
