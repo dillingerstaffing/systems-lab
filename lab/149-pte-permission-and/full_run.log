@@ -1,0 +1,40 @@
+### build: gcc -std=c11 -O2 -Wall -Wextra -Werror
+$ make
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_walk_permits test_walk_permits.c walk_permits.c
+
+$ ./test_walk_permits
+checks=34402 mismatches=0 checksum=6266f98fc9acd43b
+elapsed=0.001 s (27.668 ns/check)
+header-checks=34402
+header-mismatches=0
+header-checksum=6266f98fc9acd43b
+
+### build: -O0
+gcc -std=c11 -O0 -Wall -Wextra -Werror -o test_walk_permits_o0 test_walk_permits.c walk_permits.c
+./test_walk_permits_o0
+checks=34402 mismatches=0 checksum=6266f98fc9acd43b
+elapsed=0.003 s (87.949 ns/check)
+header-checks=34402
+header-mismatches=0
+header-checksum=6266f98fc9acd43b
+
+### build: ASan+UBSan
+gcc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -o test_walk_permits_asan test_walk_permits.c walk_permits.c
+./test_walk_permits_asan
+checks=34402 mismatches=0 checksum=6266f98fc9acd43b
+elapsed=0.008 s (218.627 ns/check)
+header-checks=34402
+header-mismatches=0
+header-checksum=6266f98fc9acd43b
+
+### bench: -O2
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_walk_permits bench_walk_permits.c walk_permits.c
+./bench_walk_permits
+rep 0: 120579708 ns total, 12.058 ns/check
+rep 1: 122664015 ns total, 12.266 ns/check
+rep 2: 123176845 ns total, 12.318 ns/check
+rep 3: 122046498 ns total, 12.205 ns/check
+rep 4: 122618527 ns total, 12.262 ns/check
+best=12.058 ns/check
+header-throughput=12.058 ns/check
+sink=2119985360 (accumulator kept live)
