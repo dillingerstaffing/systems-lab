@@ -4,7 +4,7 @@ Mismatches: 0
 Checksum: 0x4c11b8482936109c
 Throughput: 1.332 ns/value
 Environment: Host
-Verdict: pass
+Verdict: PASS
 -->
 # PROOF.md: lab/118, single-bit set/clear/toggle/test from the mask identities
 
