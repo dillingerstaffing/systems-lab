@@ -1,0 +1,17 @@
+$ make
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_pte_ad test_pte_ad.c pte_ad.c
+$ make run
+./test_pte_ad
+checks=1215 mismatches=0 checksum=15d19d25bf280794
+$ make opt0
+gcc -std=c11 -O0 -Wall -Wextra -Werror -o test_pte_ad_o0 test_pte_ad.c pte_ad.c
+./test_pte_ad_o0
+checks=1215 mismatches=0 checksum=15d19d25bf280794
+$ make sanitize
+gcc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -o test_pte_ad_asan test_pte_ad.c pte_ad.c
+./test_pte_ad_asan
+checks=1215 mismatches=0 checksum=15d19d25bf280794
+$ make bench
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_pte_ad bench_pte_ad.c pte_ad.c
+./bench_pte_ad
+5.840 ns/predict at -O2 (best of 5, N=2000000)
