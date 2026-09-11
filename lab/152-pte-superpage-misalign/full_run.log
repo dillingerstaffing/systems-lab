@@ -1,0 +1,13 @@
+$ make clean && make && make run && make opt0 && make sanitize && make bench
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o test_pte_superpage test_pte_superpage.c pte_superpage.c
+./test_pte_superpage
+checks=30000063 mismatches=0 checksum=5cb66b0d233f83a1
+gcc -std=c11 -O0 -Wall -Wextra -Werror -o test_pte_superpage_o0 test_pte_superpage.c pte_superpage.c
+./test_pte_superpage_o0
+checks=30000063 mismatches=0 checksum=5cb66b0d233f83a1
+gcc -std=c11 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined -o test_pte_superpage_asan test_pte_superpage.c pte_superpage.c
+./test_pte_superpage_asan
+checks=30000063 mismatches=0 checksum=5cb66b0d233f83a1
+gcc -std=c11 -O2 -Wall -Wextra -Werror -o bench_pte_superpage bench_pte_superpage.c pte_superpage.c
+./bench_pte_superpage
+4.548 ns/predict at -O2 (best of 5, N=50000000)
