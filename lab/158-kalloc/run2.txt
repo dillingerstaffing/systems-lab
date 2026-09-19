@@ -1,0 +1,13 @@
+ok: T1 drain count == 16383 pages
+ok: T1 pages distinct, aligned, inside arena
+ok: T4 PGROUNDUP: only page end+4096 freed from (end+100, end+100+2pg)
+ok: T4 second kalloc is 0 (exactly one page qualified)
+ok: T2 LIFO order: last freed is first allocated
+ok: T3 kfree fills page with 0x01
+ok: T3 kalloc refills page with 0x05
+ok: T5 misaligned address panics
+ok: T5 address below end panics
+ok: T5 address >= PHYSTOP panics
+ok: T6 threaded alloc/free conserves all 16383 pages
+ok: lock discipline: acquires == releases
+acquires=89553 releases=89553 fails=0
