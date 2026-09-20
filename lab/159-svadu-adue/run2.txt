@@ -1,0 +1,13 @@
+SVADU up
+menvcfg=0x2000000000000000 ADUE=1
+s-mode up
+ph0 store: traps=1 pte=0x00000000200400c7
+PASS S1 store with ADUE=0 traps once (scause 15), software sets A|D
+ph0 load:  traps=1 pte=0x0000000020040047
+PASS S2 load with ADUE=0 traps once (scause 13), software sets A
+m-mode: ADUE=1 menvcfg=0x2000000000000000
+ph1 store: traps=0 pte=0x00000000200400c7
+PASS S3 store with ADUE=1: zero traps, walker set A and D
+ph1 load:  traps=0 pte=0x0000000020040047
+PASS S4 load with ADUE=1: zero traps, walker set A only
+result 4/4 pass
