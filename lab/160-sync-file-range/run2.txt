@@ -1,0 +1,9 @@
+T1 flags=0 no-op: returned 0
+T2 invalid flag bit: EINVAL as documented
+T3 pipe fd: ESPIPE as documented
+T4 WRITE-only (async start): 5243 us; WAIT_AFTER (wait): 11320 us
+T5 WAIT_BEFORE|WRITE|WAIT_AFTER on bytes [2MiB,6MiB): ok, 14118 us
+T6 iter 0: full-range combo 24468 us, fsync 37329 us
+T6 iter 1: full-range combo 19061 us, fsync 26537 us
+T6 iter 2: full-range combo 15924 us, fsync 28463 us
+ALL TESTS PASSED
