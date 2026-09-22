@@ -10,7 +10,7 @@ from the function body and asserts the expected sequence. Then asserts
 the binary signature: the ztso object's Tag_RISCV_arch gains _ztso1p0,
 the base object's does not.
 
-10 checks per run. Exits nonzero on any mismatch.
+12 checks per run. Exits nonzero on any mismatch.
 """
 import re
 import subprocess
