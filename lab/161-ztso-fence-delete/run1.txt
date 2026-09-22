@@ -1,0 +1,13 @@
+ok   base: compiles clean
+ok   base: st_seq_cst fences == ['fence rw,w', 'fence rw,rw']
+ok   base: ld_seq_cst fences == ['fence rw,rw', 'fence r,rw']
+ok   base: st_release fences == ['fence rw,w']
+ok   base: ld_acquire fences == ['fence r,rw']
+ok   ztso: compiles clean
+ok   ztso: st_seq_cst fences == ['fence rw,rw']
+ok   ztso: ld_seq_cst fences == ['fence rw,rw']
+ok   ztso: st_release fences == []
+ok   ztso: ld_acquire fences == []
+ok   base: Tag_RISCV_arch lacks _ztso1p0
+ok   ztso: Tag_RISCV_arch has _ztso1p0
+checks=12 mismatches=0
