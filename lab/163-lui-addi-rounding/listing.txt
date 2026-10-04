@@ -1,0 +1,16 @@
+
+li.o:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <load_consts>:
+   0:	7ff00513          	li	a0,2047
+   4:	000015b7          	lui	a1,0x1
+   8:	8005859b          	addiw	a1,a1,-2048 # 800 <load_consts+0x800>
+   c:	12345637          	lui	a2,0x12345
+  10:	6786061b          	addiw	a2,a2,1656 # 12345678 <load_consts+0x12345678>
+  14:	123466b7          	lui	a3,0x12346
+  18:	eef6869b          	addiw	a3,a3,-273 # 12345eef <load_consts+0x12345eef>
+  1c:	fff00713          	li	a4,-1
+  20:	00008067          	ret
