@@ -1,0 +1,12 @@
+shr.c compiled with: riscv64-unknown-elf-gcc 13.2.0 -O2 -march=rv64g -mabi=lp64d
+
+0000000000000074 <shr3>:
+  74:	40355513          	srai	a0,a0,0x3
+  78:	00008067          	ret
+
+000000000000007c <div8>:
+  7c:	41f5579b          	sraiw	a5,a0,0x1f
+  80:	01d7d79b          	srliw	a5,a5,0x1d
+  84:	00a7853b          	addw	a0,a5,a0
+  88:	4035551b          	sraiw	a0,a0,0x3
+  8c:	00008067          	ret
