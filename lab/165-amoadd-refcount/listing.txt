@@ -1,0 +1,15 @@
+main.c compiled with: riscv64-unknown-elf-gcc 13.2.0 -O2 -march=rv64imac_zicsr -mabi=lp64 -mcmodel=medany -ffreestanding -nostdlib -nostartfiles
+
+Each rc_drop/rc_acquire inlines to a single amoadd.w (rd takes the old value):
+    80000248:	009425af          	amoadd.w	a1,s1,(s0)
+    8000025c:	009425af          	amoadd.w	a1,s1,(s0)
+    80000270:	009424af          	amoadd.w	s1,s1,(s0)
+    800002a2:	00b425af          	amoadd.w	a1,a1,(s0)
+
+The naive drop for contrast: lw, addiw, sw with the read and write split apart:
+0000000080000216 <naive_drop>:
+    80000216:	87aa                	mv	a5,a0
+    80000218:	4108                	lw	a0,0(a0)
+    8000021a:	fff5071b          	addiw	a4,a0,-1
+    8000021e:	c398                	sw	a4,0(a5)
+    80000220:	8082                	ret

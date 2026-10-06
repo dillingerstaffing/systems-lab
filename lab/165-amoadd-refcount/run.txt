@@ -1,0 +1,7 @@
+count=3
+drop: old=3 now=2
+drop: old=2 now=1
+drop: old=1 now=0
+last holder frees
+acquire: old=0 now=1
+DONE
